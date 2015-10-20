@@ -2,15 +2,44 @@
 // Constructors
 // Only add code to *THIS* section!
 
-///
+//Constructors
+
+'use strict';
+
+var Dog = function Dog(params) {
+
+  params = params || {};
+
+  this.name = params.name;
+  this.color = params.color;
+  this.hungry = params.hungry === undefined ? true : params.hungry;
+  this.status = 'normal';
+};
+
+var Human = function Human(params) {
+
+  params = params || {};
+  this.name = params.name;
+  this.owner = params.owner;
+  this.feed = params.feed;
+  this.cool = params.cool || false;
+  this.pet = params.pet;
+
+  this.pet = function (dog) {
+    dog.status = 'happy';
+  };
+
+  this.feed = function (dog) {
+    dog.hungry = false;
+  };
+};
+
 ///
 ///
 ///
 
 // Do not ADD or MODIFY code below this line :)
 // Dogs
-'use strict';
-
 var sadie = new Dog({
   color: 'black',
   hungry: false
